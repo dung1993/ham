@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    function randomNumber(size, min, max) {
+        let listNumber = new Array(size);
+        for (let i = 0; i < size; i++) {
+            listNumber[i] = new Array(size)
+            for( let j = 0; j < size; j++){
+                listNumber[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            
+        }
+        return listNumber;
+    }
+    let randomnumber = randomNumber(10,10,90);
+    document.write(randomnumber.join("</br>"));
+    document.write("<br>");
+
+</script>
+</html>
