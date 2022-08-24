@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //  tạo 1 hàm trả về mang có size phần tử giá trị sinh ngẫu nhiên từ min  - max;
+    function randomNumber(size, min, max) {
+        let listNumber = new Array(size);
+        for (let i = 0; i < size; i++) {
+            listNumber[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        return listNumber;
+    }
+
+    
+    
+
+    let array = randomNumber(10, 20, 10)
+    let array1 = randomNumber(15, 20, 10);
+    document.write(array);
+    document.write('<br>');
+    document.write(array1);
+
+    
+</script>
+
+</html>

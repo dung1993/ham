@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    //đếm số
+    function countNumber(size, min, max) {
+        let listNumber = new Array(size);
+        for (let i = 0; i < size; i++) {
+            listNumber[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        return listNumber;
+    }
+    let array = countNumber(10, 10, 20);
+    document.write(array);
+
+    //đếm số chẳn
+    function evenNumber(array) {
+        let count = 0
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    let evennumber = evenNumber(array)
+    document.write(` dãy có ${evennumber} số chẵn <br>`);
+
+    // số chính phương
+
+    function squareNumber(array){
+        let count = 0;
+        for(let i = 0 ; i < array.length; i++){
+            number = Number.isInteger(Math.sqrt(array[i]));
+            if(number == true){
+                count++;
+            } 
+        }
+        return count;
+    }
+    let squarenumber = squareNumber(array);
+    document.write(` dãy có ${squarenumber} số chính phương <br>`);
+
+    // số nguyên tố
+
+    function primeNumber(array){
+        let count = 0;
+            countSNT = 0;
+        for( let i= 0; i < array.length; i++){
+            if (countSNT < array[i]){
+                for( let j = 2; j < array.length; j++){
+                    if(array[i]%j==0){
+                        count++;
+                    }
+                }
+                if(count == 0 && array[i]!=1){
+                    countSNT++;
+                }
+                count = 0;
+            }
+        }
+        return countSNT;
+    }
+    let primenumber = primeNumber(array);
+    document.write(` dãy có ${primenumber} số nguyên tố <br>`);
+</script>
+
+</html>
