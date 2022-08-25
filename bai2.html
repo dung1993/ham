@@ -44,8 +44,92 @@
         return sum;
     }
     let sumevennumber = sumEvenNumber(randomnumber);
-    document.write(` Tổng các số chẳn trong ma trận là ${sumevennumber}`);
+    document.write(` Tổng các số chẳn trong ma trận là ${sumevennumber} <br>`);
 
+    //2. Tính tổng các giá trị trên đường chéo chính
+    function diagonal(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (i == j) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let sumdiagonal = diagonal(randomnumber);
+    document.write(` Tổng đường chéo chính trong ma trận là ${sumdiagonal} <br>`);
+
+    //3. Tính tổng các giá trị trên đường chéo phụ
+    function crissCross(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - 1; j++) {
+                if (i + j == arr.length - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let crisscross = crissCross(randomnumber);
+    document.write(`Tổng đường chéo phụ trong ma trận là ${crisscross} <br>`);
+
+    //4. Tính tổng các giá trị trên đường biên
+    function borderLine(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (i == 0 || j == 0 || i == arr.length - 1 || j == arr.length - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let borderline = borderLine(randomnumber);
+    document.write(`Tổng đường chéo phụ trong ma trận là ${borderline} <br>`);
+
+    //6. Hiển trị ma trận tam giác dưới
+
+    function underTriangle(listNumber) {
+        let arr = new Array();
+        let col = listNumber.length;
+        for (let i = 0; i < listNumber.length; i++) {
+            arr[i] = [];
+            for (let j = 0; j < col; j++) {
+                arr[i][j] = listNumber[i][j];
+            }
+            col--;
+        }
+        return arr;
+    }
+
+    let undertriangle = underTriangle(randomnumber);
+    document.write(` ${undertriangle.join('<br/>')}`);
+    document.write('<br>');
+
+
+    //7. Hiển thị ma trân tam giác trên
+
+    function lowerTriangle(listNumber){
+        let arr = new Array();
+        let col = listNumber.length;
+        for (let i = 0; i < listNumber.length; i++) {
+            arr[i] = [];
+            for (let j = 0; j <=i ; j++) {
+                arr[i][j] = listNumber[i][j];
+            }
+        }
+        return arr;
+    }
+
+    let lowertriangle = lowerTriangle(randomnumber);
+    document.write(` ${lowertriangle.join('<br/>')}`);
 </script>
 
 </html>
